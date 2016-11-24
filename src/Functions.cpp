@@ -26,6 +26,10 @@ const double PI = 3.14159265358979;
  *
  * (double n)   This is the function's parameters. In this case the function requires one parameter that is a double.
  *              Functions can require more than one parameter, and in that case, the parameters are separated by commas.
+ *
+ * Head to the definition of square for more important information on functions (in the comments above it).
+ * Put your cursor in the function's name and press F3, or right click the function name
+ * and pick "Open Declaration"
  */
 // Returns the square of a given number
 double square(double n);
@@ -92,6 +96,43 @@ int main()
     return 0;
 }
 
+/*
+ * When calling a function, you simply use it's name. In this case, we could write:
+ *      double number = 7;
+ *      double numberSquared = square(number);
+ * This calls the function square with the argument number, and stores it's return value in
+ * a variable named numberSquared.
+ *
+ * When calling a function, the arguments in the brackets match up with the parameters the function
+ * requires. In this case, the value of the variable number is copied to the parameter named in square.
+ * Within the square function, you can then refer to this argument using the name n. Changing n will not
+ * change number in this case, as we copied it
+ * (but this is possible in C++ - see the advanced topic after this section)
+ *
+ * We don't have to call functions using variables for arguments, using a plain number (called a literal)
+ * is perfectly acceptable:
+ *      double numberSquared = square(8);
+ * We also don't have to store what the function returns. We could write
+ *      squareNumber(3);
+ * and the compiler wouldn't care. Sometimes this is done intentionally, but sometimes you do it by accident.
+ * Watch out for bugs like this!
+ *
+ * The function definition looks just like the prototype, but we followed it with the pair of
+ * curly braces ({ }), and there is no semicolon after the round brackets anymore.
+ * All the code within the braces is part of the function.
+ * Note that you must give the parameters a name in the function definition, but you don't need to
+ * do this in the prototype. This is because you are going to use these names in the function body
+ * between the braces to write your function.
+ */
+// ---- ADVANCED TOPIC -----
+/*
+ * We are discussing what is called pass by value functions. In C++, you can also pass by reference,
+ * allowing you to change the value of the parameter passed to function, and having those changes also
+ * occur where the function was called. You could also have a function with a pointer (something not
+ * yet discussed) parameter, and the function could use the pointer to change the computer's memory
+ * where the pointer is pointing. When the code that called the function looks at the memory where
+ * the pointer points, it will see the change the function made.
+ */
 double square(double n)
 {
     // The return keyword immediately returns a value and stops executing a function
