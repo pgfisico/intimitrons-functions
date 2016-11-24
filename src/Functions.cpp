@@ -51,21 +51,7 @@ double square(double n);
 // Radius should be greater than zero
 double circleArea(double radius)
 {
-    // TODO Implement this function
-    /*
-     * Note Eclipse warns you there is no return in your function that should return a double (yellow bug on the left edge)
-     * You also have the clickable yellow box on the scrollbar.
-     * Warnings and errors also appear in the Problems view in the bottom pane. If it's not there, go to
-     * Window->Show View->Problems in the menu bar.
-     *
-     * IMPORTANT NOTE: Eclipse is tricky when used for C++, sometimes you have to save or re-build for the Problems view
-     * and markers on the left and right sides to update.
-     */
-    // Hint: You will need to call the square() function
-    /*
-     * PI has been defined for you - Take a look at the Outline view in Eclipse
-     * It should be a tab in the right hand pane. If it's not there, use Window->Show View->Outline on the menu bar.
-     */
+    return PI * square(radius);
 }
 
 /*
@@ -90,8 +76,7 @@ int main()
     std::cout << "Enter height: ";
     std::cin >> height;
 
-    // TODO Print out the volume of the cylinder in this line (i.e. call cylinderVolume())
-    std::cout << "Cylinder volume is: " << std::endl;
+    std::cout << "Cylinder volume is: " << cylinderVolume(radius, height) << std::endl;
 
     return 0;
 }
@@ -142,7 +127,6 @@ double square(double n)
 
 double cylinderVolume(double radius, double height)
 {
-    // TODO Implement this function
-    // Hint: Call circleArea from this function to help you out with the computation
+    return circleArea(radius) * height;
 }
 
